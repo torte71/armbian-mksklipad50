@@ -228,10 +228,10 @@
 //-		//reset-gpios = <0x29 0x12 0x01>;
 		reset-gpios = <&gpio1 RK_PC2 GPIO_ACTIVE_LOW>;
 	};
-
+//-
 //-
 //- "gpio-backlight" has a bug that makes it ignore "default-on"
-//
+//-
 //-	backlight: backlight {
 //-		compatible = "gpio-backlight";
 //-		gpios = <&gpio3 RK_PA5 GPIO_ACTIVE_HIGH>;
@@ -358,8 +358,8 @@
 //-		//klipad: parent=0x29=gpio@ff22=gpio1
 //-		//mkspi: interrupt-parent = <&gpio2>;
 		interrupt-parent = <&gpio1>;
-//-		//mkspi: interrupts = <RK_PA6 IRQ_TYPE_LEVEL_LOW>;
-		interrupts = <RK_PD0 IRQ_TYPE_LEVEL_LOW>;
+//-		//mkspi: interrupts = <6 IRQ_TYPE_LEVEL_LOW>;
+		interrupts = <24 IRQ_TYPE_LEVEL_LOW>;
 		#clock-cells = <1>;
 		clock-output-names = "xin32k", "rk805-clkout2";
 		gpio-controller;
@@ -471,8 +471,7 @@
 };
 
 &pwm3 {
-//-	//GIC_SPI=0x00 SCLK_TIMER3=0x32 IRQ_TYPE_LEVEL_HIGH=0x04
-	interrupts = <GIC_SPI SCLK_TIMER3 IRQ_TYPE_LEVEL_HIGH>;
+	interrupts = <GIC_SPI 50 IRQ_TYPE_LEVEL_HIGH>;
 //-	//interrupts = <0x00 0x32 0x04>;
 };
 
