@@ -718,10 +718,16 @@
 };
 
 &usb_host0_ehci {
+//---uboot-start---
+	bootph-all;
+//---uboot-end---
 	status = "okay";
 };
 
 &usb_host0_ohci {
+//---uboot-start---
+	bootph-all;
+//---uboot-end---
 	status = "okay";
 };
 
